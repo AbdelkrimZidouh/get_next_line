@@ -157,9 +157,6 @@ The bonus version uses an **array of static pointers** (`static char *tmp[OPEN_M
 - [Understanding File Descriptors](https://www.bottomupcs.com/file_descriptors.xhtml) - Deep dive into how file descriptors work
 - [Memory Management in C](https://www.learn-c.org/en/Dynamic_allocation) - malloc, free, and memory leaks
 
-### 42 Resources
-- [42 Cursus - get_next_line subject](https://github.com/42School/norminette) - Official project subject
-- 42 Peer evaluations and corrections
 
 ### AI Usage
 
