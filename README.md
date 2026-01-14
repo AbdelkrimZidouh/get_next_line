@@ -186,6 +186,8 @@ AI assistance (GitHub Copilot and ChatGPT) was used in the following ways during
 
 **Learning Outcome**: While AI tools were helpful for understanding concepts and debugging, the implementation itself was coded manually after fully understanding the requirements and algorithm design. This approach ensured deep learning of memory management and file I/O concepts.
 
+### Testing Resources
+- [Francinette](https://github.com/xicodomingues/francinette) - popular tester
+
 ---
 
-**Note**: This implementation passes all 42 mandatory and bonus requirements, including norminette compliance, memory leak checks (valgrind), and edge case handling. 
