@@ -1,4 +1,4 @@
-_This project has been created as part of the 42 curriculum by AbdelkrimZidouh._
+_This project has been created as part of the 42 curriculum by azidouh._
 
 # get_next_line
 
@@ -86,19 +86,6 @@ while ((line = get_next_line(0)) != NULL)  // 0 = stdin
 - Returns `NULL` when there's nothing left to read or if an error occurs
 - The caller is responsible for freeing the returned string
 
-### Files Structure
-
-```
-.
-├── get_next_line.c              # Main function implementation
-├── get_next_line. h              # Header file with prototypes and macros
-├── get_next_line_utils.c        # Utility functions (strlen, strchr, etc.)
-├── get_next_line_bonus.c        # Bonus:  handles multiple FDs
-├── get_next_line_bonus. h        # Bonus header file
-├── get_next_line_utils_bonus.c  # Bonus utility functions
-└── main.c                       # Test file (optional)
-```
-
 ## Algorithm Explanation and Justification
 
 ### Selected Algorithm:  Static Buffer with Progressive Reading
@@ -143,43 +130,6 @@ The algorithm chosen for this implementation uses a **static variable to maintai
 - Removes the returned line from static storage
 - Keeps remaining data for next call
 - Handles memory reallocation
-
-#### Algorithm Complexity
-
-- **Time Complexity**: O(n) where n is the total number of characters read
-  - Each character is read once from the file
-  - Each character is copied at most twice (into buffer, then into line)
-
-- **Space Complexity**: O(m) where m is the length of the longest line
-  - Static buffer grows only to accommodate pending data
-  - No unnecessary allocation of large buffers
-
-#### Why This Algorithm? 
-
-1. **Memory Efficiency**:  
-   - Only allocates memory for actual data read
-   - No large pre-allocated buffers
-   - Properly frees unused memory
-
-2. **Flexibility**:
-   - Works with any BUFFER_SIZE (1 to very large values)
-   - Handles files with varying line lengths
-   - Manages edge cases (empty lines, no trailing newline, etc.)
-
-3. **Performance**:
-   - Minimizes read() system calls (expensive operations)
-   - Reduces memory copies through strategic use of pointers
-   - Static variable eliminates redundant reads
-
-4. **Correctness**:
-   - Handles all edge cases required by the subject
-   - No buffer overflows
-   - Proper memory management (no leaks)
-
-5. **42 Subject Compliance**:
-   - Uses only allowed functions (read, malloc, free)
-   - No global variables (static is local to function)
-   - Handles multiple file descriptors (bonus)
 
 #### Bonus Implementation:  Multiple File Descriptors
 
