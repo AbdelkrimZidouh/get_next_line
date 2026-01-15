@@ -108,42 +108,6 @@ The algorithm chosen for this implementation uses a **static variable to maintai
    Step 5: Extract one line and update static buffer with remaining data
    ```
 
-#### Key Functions
-
-**`get_next_line(int fd)`**: Main function that orchestrates the reading process
-- Validates input (fd >= 0, BUFFER_SIZE > 0)
-- Manages the read loop
-- Returns one complete line
-
-**`copy(char *tmp, char *buff)`**: Concatenates new data to existing buffer
-- Efficiently joins the static buffer with newly read data
-- Handles NULL cases (first read)
-- Uses custom `ft_strjoin` implementation
-
-**`get_line(char **tmp, ssize_t len)`**: Extracts a single line from buffer
-- Searches for `\n` character
-- Extracts substring up to and including `\n`
-- Handles EOF without trailing newline
-- Calls `ft_modify` to clean up the static buffer
-
-**`ft_modify(char **tmp)`**: Updates the static buffer after line extraction
-- Removes the returned line from static storage
-- Keeps remaining data for next call
-- Handles memory reallocation
-
-#### Bonus Implementation:  Multiple File Descriptors
-
-The bonus version uses an **array of static pointers** (`static char *tmp[OPEN_MAX]`) where:
-- Each index corresponds to a file descriptor
-- `OPEN_MAX` is typically 1024 (maximum number of open files)
-- Each FD maintains its own independent buffer
-- Allows interleaved reading from multiple files: 
-  ```c
-  get_next_line(fd1);  // Read line 1 from file 1
-  get_next_line(fd2);  // Read line 1 from file 2
-  get_next_line(fd1);  // Read line 2 from file 1
-  ```
-
 ## Resources
 
 ### Documentation
