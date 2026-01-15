@@ -124,31 +124,11 @@ The algorithm chosen for this implementation uses a **static variable to maintai
 
 ### AI Usage
 
-AI assistance (GitHub Copilot and ChatGPT) was used in the following ways during this project: 
-
 1. **Documentation and Learning**:
    - Understanding the mechanics of static variables and their persistence
    - Clarifying the behavior of read() with different buffer sizes
    - Learning about file descriptor management in Unix systems
 
-2. **Code Review and Debugging**:
-   - Identifying potential memory leaks using AI-powered analysis
-   - Understanding segmentation faults and NULL pointer dereferences
-   - Optimizing string manipulation functions
-
-3. **Edge Case Discovery**:
-   - AI helped identify edge cases such as: 
-     - Files ending without a newline character
-     - Empty files or empty lines
-     - Very large files with small BUFFER_SIZE
-     - Reading from stdin vs regular files
-
-4. **Not Used For**:
-   - Writing the core algorithm logic (entirely original work)
-   - Copy-pasting complete function implementations
-   - Solving the project without understanding the concepts
-
-**Learning Outcome**: While AI tools were helpful for understanding concepts and debugging, the implementation itself was coded manually after fully understanding the requirements and algorithm design. This approach ensured deep learning of memory management and file I/O concepts.
 
 ### Testing Resources
 - [Francinette](https://github.com/xicodomingues/francinette) - popular tester
